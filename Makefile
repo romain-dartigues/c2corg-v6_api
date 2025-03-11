@@ -1,10 +1,9 @@
-SITE_PACKAGES = $(shell .build/venv/bin/python -c "import distutils; print(distutils.sysconfig.get_python_lib())" 2> /dev/null)
+export PYTHON_SYS_PREFIX = $(shell python3 -c 'import sys;print(sys.prefix)')
 TEMPLATE_FILES_IN = $(filter-out ./.build/%, $(shell find . -type f -name '*.in'))
 TEMPLATE_FILES = $(TEMPLATE_FILES_IN:.in=)
 
 # variables used in config files (*.in)
 export base_dir = $(abspath .)
-export site_packages = $(SITE_PACKAGES)
 
 include config/default
 
