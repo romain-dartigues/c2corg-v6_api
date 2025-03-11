@@ -8,7 +8,6 @@
 /c2corg_api/scripts/loadtests/loadtests.ini
 /apache/app-c2corg_api.wsgi
 /apache/wsgi.conf
-/MANIFEST
 *.pyc
 *.egg-info
 /.idea

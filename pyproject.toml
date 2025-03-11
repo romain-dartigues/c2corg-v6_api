@@ -95,6 +95,29 @@ fill_es_index = "c2corg_api.scripts.es.fill_index:main"
 Homepage = "https://www.camptocamp.org/"
 Repository = "http://github.com/c2corg/v6_api"
 
+# https://hatch.pypa.io/latest/config/build/#file-selection
+[tool.hatch.build.targets.sdist]
+include = [
+    "*.cfg",
+    "*.css",
+    "*.gif",
+    "*.html",
+    "*.ico",
+    "*.ini",
+    "*.jpg",
+    "*.js",
+    "*.mak",
+    "*.mako",
+    "*.md",
+    "*.png",
+    "*.pt",
+    "*.txt",
+    "*.xml",
+    "c2corg_api",
+]
+exclude = [
+]
+
 [tool.hatch.metadata]
 allow-direct-references = true
 
