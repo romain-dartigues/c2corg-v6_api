@@ -4,7 +4,7 @@
 use = egg:c2corg_api
 
 # Disable the authorization checks if True
-noauthorization = {noauthorization}
+noauthorization = ${noauthorization}
 
 pyramid.default_locale_name = en
 
@@ -12,30 +12,30 @@ pyramid.default_locale_name = en
 # per application instance.
 sqlalchemy.pool_size=20
 
-elasticsearch.host = {elasticsearch_host}
-elasticsearch.port = {elasticsearch_port}
-elasticsearch.index = {elasticsearch_index}
+elasticsearch.host = ${elasticsearch_host}
+elasticsearch.port = ${elasticsearch_port}
+elasticsearch.index = ${elasticsearch_index}
 elasticsearch.pool = 50
 
 # batch size for fill_index
-elasticsearch.batch_size.fill_index = {elasticsearch_batch_size_fill_index}
+elasticsearch.batch_size.fill_index = ${elasticsearch_batch_size_fill_index}
 
 # batch size for es_syncer script
-elasticsearch.batch_size.syncer = {elasticsearch_batch_size_syncer}
+elasticsearch.batch_size.syncer = ${elasticsearch_batch_size_syncer}
 
 # Redis is used as queue to notify the syncer script of changed documents
 # and also as cache
-redis.url = {redis_url}
-redis.db_queue = {redis_db_queue}
-redis.db_cache = {redis_db_cache}
+redis.url = ${redis_url}
+redis.db_queue = ${redis_db_queue}
+redis.db_cache = ${redis_db_cache}
 
 # queue configuration
-redis.exchange = {redis_exchange}
-redis.queue_es_sync = {redis_queue_es}
+redis.exchange = ${redis_exchange}
+redis.queue_es_sync = ${redis_queue_es}
 redis.queue_pool = 20
 
 # cache configuration
-redis.cache_key_prefix = {redis_cache_key_prefix}
+redis.cache_key_prefix = ${redis_cache_key_prefix}
 redis.cache_pool = 50
 # timeout on socket setup (seconds)
 redis.socket_connect_timeout = 0.1
@@ -47,18 +47,18 @@ redis.pool_timeout = 0.5
 redis.expiration_time = 604800
 # status refresh period (in seconds): if a request to Redis failed in the last
 # x seconds, no new request will be made.
-redis.cache_status_refresh_period = {redis_cache_status_refresh_period}
+redis.cache_status_refresh_period = ${redis_cache_status_refresh_period}
 
-cache_version = {version}
+cache_version = ${version}
 cache_version_timestamp = False
 
 # User id to use for anonymous contributions in the guidebook
-guidebook.anonymous_user_account = {guidebook_anonymous_user_account}
+guidebook.anonymous_user_account = ${guidebook_anonymous_user_account}
 
 # if given, changes of this user account will not be returned in the feed
-feed.admin_user_account = {feed_admin_user_account}
+feed.admin_user_account = ${feed_admin_user_account}
 
-logging.level = {logging_level}
+logging.level = ${logging_level}
 
 jwtauth.find_groups = c2corg_api.security.roles:groupfinder
 
@@ -66,32 +66,32 @@ jwtauth.find_groups = c2corg_api.security.roles:groupfinder
 jwtauth.master_secret = The master key
 
 # FIXME: do not save the forum key on github
-discourse.url = {discourse_url}
-discourse.public_url = {discourse_public_url}
-discourse.api_key = {discourse_api_key}
-discourse.sso_secret = {discourse_sso_secret}
-discourse.category = {discourse_category}
+discourse.url = ${discourse_url}
+discourse.public_url = ${discourse_public_url}
+discourse.api_key = ${discourse_api_key}
+discourse.sso_secret = ${discourse_sso_secret}
+discourse.category = ${discourse_category}
 
-ui.url = {ui_url}
+ui.url = ${ui_url}
 
-mail.validate_register_url_template = {mail_validate_register_url_template}
-mail.request_password_change_url_template = {mail_request_password_change_url_template}
-mail.validate_change_email_url_template = {mail_validate_change_email_url_template}
+mail.validate_register_url_template = ${mail_validate_register_url_template}
+mail.request_password_change_url_template = ${mail_request_password_change_url_template}
+mail.validate_change_email_url_template = ${mail_validate_change_email_url_template}
 
-mail.from = {mail_from}
-mail.host = {mail_host}
-mail.port = {mail_port}
-mail.username = {mail_username}
-mail.password = {mail_password}
-mail.tls = {mail_tls}
-mail.ssl = {mail_ssl}
-mail.keyfile = {mail_keyfile}
-mail.certfile = {mail_certfile}
-mail.queue_path = {mail_queue_path}
-mail.default_sender = {mail_default_sender}
-mail.debug = {mail_debug}
-mail.sendmail_app = {mail_sendmail_app}
-mail.sendmail_template = {mail_sendmail_template}
+mail.from = ${mail_from}
+mail.host = ${mail_host}
+mail.port = ${mail_port}
+mail.username = ${mail_username}
+mail.password = ${mail_password}
+mail.tls = ${mail_tls}
+mail.ssl = ${mail_ssl}
+mail.keyfile = ${mail_keyfile}
+mail.certfile = ${mail_certfile}
+mail.queue_path = ${mail_queue_path}
+mail.default_sender = ${mail_default_sender}
+mail.debug = ${mail_debug}
+mail.sendmail_app = ${mail_sendmail_app}
+mail.sendmail_template = ${mail_sendmail_template}
 
 # Number of seconds to wait for response bytes on the requests sockets.
 # At the expiration of this timeout, the request is considered failed.
@@ -99,21 +99,21 @@ mail.sendmail_template = {mail_sendmail_template}
 # This value is used globally in the application.
 url.timeout = 10
 
-recaptcha.secret.key = {recaptcha_secret_key}
-skip.captcha.validation = {skip_captcha_validation}
+recaptcha.secret.key = ${recaptcha_secret_key}
+skip.captcha.validation = ${skip_captcha_validation}
 
-image_backend.url = {image_backend_url}
-image_backend.secret_key = {image_backend_secret_key}
-image_url = {image_url}
+image_backend.url = ${image_backend_url}
+image_backend.secret_key = ${image_backend_secret_key}
+image_url = ${image_url}
 
 # Rate limiting settings
 # Window timespan in seconds:
-rate_limiting.window_span = {rate_limiting_window_span}
+rate_limiting.window_span = ${rate_limiting_window_span}
 # Max number of actions allowed during a single window:
-rate_limiting.limit = {rate_limiting_limit}
-rate_limiting.limit_moderator = {rate_limiting_limit_moderator}
-rate_limiting.limit_robot = {rate_limiting_limit_robot}
+rate_limiting.limit = ${rate_limiting_limit}
+rate_limiting.limit_moderator = ${rate_limiting_limit_moderator}
+rate_limiting.limit_robot = ${rate_limiting_limit_robot}
 # Max number of times a user can be rate limited before being blocked:
-rate_limiting.max_times = {rate_limiting_max_times}
+rate_limiting.max_times = ${rate_limiting_max_times}
 # Email address rate limiting alert messages are sent to
-rate_limiting.alert_address = {rate_limiting_alert_address}
+rate_limiting.alert_address = ${rate_limiting_alert_address}
